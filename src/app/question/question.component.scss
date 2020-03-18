@@ -1,0 +1,16 @@
+mat-card {
+  display: block;
+  margin-bottom: 20px;
+}
+
+mat-card:first-child {
+  background: #009DDC
+}
+
+mat-card-title {
+  margin: 0 !important;
+}
+
+.selected {
+  background: #E4D9FF;
+}

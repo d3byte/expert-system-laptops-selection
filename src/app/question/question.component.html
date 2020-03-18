@@ -1,0 +1,30 @@
+<section *ngIf="question">
+
+  <mat-card>
+
+    <mat-card-header>
+
+      <mat-card-title>{{ question?.title }}</mat-card-title>
+
+    </mat-card-header>
+
+  </mat-card>
+
+  <mat-card *ngFor="let answer of question?.answers"
+            (click)="handleAnswerSelect(answer)"
+            [class.selected]="answer.text === selectedAnswer?.text">
+
+    <mat-card-header>
+
+      <mat-card-title>{{ answer.text }}</mat-card-title>
+
+    </mat-card-header>
+
+  </mat-card>
+
+  <button mat-raised-button
+          color="primary"
+          [disabled]="!selectedAnswer"
+          (click)="proceed()">Ответить</button>
+
+</section>

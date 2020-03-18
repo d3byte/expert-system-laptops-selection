@@ -1,0 +1,16 @@
+<section class="app">
+
+  <div *ngIf="!finished"
+       class="wrapper">
+
+    <app-question *ngFor="let question of questions; let i = index"
+                 [question]="question"
+                 (nextQuestion)="handleNextQuestion($event, i)"
+                 [class.hide]="i !== activeQuestion"></app-question>
+
+  </div>
+
+  <app-laptops *ngIf="finished && sortedLaptops"
+               [laptops]="sortedLaptops"></app-laptops>
+
+</section>
