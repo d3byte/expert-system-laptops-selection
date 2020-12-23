@@ -1,7 +1,12 @@
 export interface ScaleInterface {
-  energyEfficiency: number;
-  mobility: number;
-  performance: number;
-  gaming: number;
-  ergonomics: number;
+  price: number;
+  processor: number;
+  coresAmount: number;
+  frequency: number;
+  memorySpace: number;
+  inch: number;
+  videoMemory: number;
+  ram: number;
+  weight: number;
+  workTime: number;
 }

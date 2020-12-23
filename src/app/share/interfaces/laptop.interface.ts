@@ -4,4 +4,5 @@ export interface LaptopInterface {
   title: string;
   imageUrl: string;
   scale: ScaleInterface;
+  globalCriteria?: number;
 }

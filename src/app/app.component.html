@@ -10,6 +10,12 @@
 
   </div>
 
+<!--  <div *ngIf="normalizedScale">-->
+<!--    <p *ngFor="let item of normalizedScale">-->
+<!--      <b>{{ item[0] }}</b>: {{ item[1] }}-->
+<!--    </p>-->
+<!--  </div>-->
+
   <app-laptops *ngIf="finished && sortedLaptops"
                [laptops]="sortedLaptops"></app-laptops>
 

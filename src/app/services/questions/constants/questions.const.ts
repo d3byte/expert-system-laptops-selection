@@ -6,19 +6,23 @@ export const questions: QuestionInterface[] = [
     answers: [
       {
         text: 'Игры',
-        scaleIncrement: ['gaming'],
+        scaleIncrement: ['videoMemory'],
       },
       {
-        text: 'Работа над расчетами, моделироввание',
-        scaleIncrement: ['performance'],
+        text: 'Работа над расчетами, моделирование',
+        scaleIncrement: ['processor', 'coresAmount', 'frequency'],
       },
       {
-        text: 'Длительные поездки',
-        scaleIncrement: ['energyEfficiency'],
+        text: 'Длительные поездки/повседневное использование в разных местах',
+        scaleIncrement: ['workTime'],
       },
       {
         text: 'Для повседневного использования в разных местах',
-        scaleIncrement: ['ergonomics'],
+        scaleIncrement: ['weight'],
+      },
+      {
+        text: 'Монтаж, дизайн, программирование (качество + размер)',
+        scaleIncrement: ['inch', 'videoMemory'],
       },
     ],
   },
@@ -26,24 +30,32 @@ export const questions: QuestionInterface[] = [
     title: 'Что бы вы поставили во главу угла при выборе модели ноутбука?',
     answers: [
       {
+        text: 'Цена',
+        scaleIncrement: ['price'],
+      },
+      {
         text: 'Производительность',
-        scaleIncrement: ['performance'],
+        scaleIncrement: ['processor', 'coresAmount', 'frequency', 'videoMemory'],
       },
       {
-        text: 'Удобство использования',
-        scaleIncrement: ['ergonomics'],
-      },
-      {
-        text: 'Удобство переноса с собой',
-        scaleIncrement: ['mobility'],
+        text: 'Эргономика',
+        scaleIncrement: ['weight'],
       },
       {
         text: 'Заряд батареи',
-        scaleIncrement: ['energyEfficiency'],
+        scaleIncrement: ['workTime'],
       },
       {
         text: 'Графика',
-        scaleIncrement: ['gaming'],
+        scaleIncrement: ['videoMemory'],
+      },
+      {
+        text: 'Ресурсоемкие приложения',
+        scaleIncrement: ['memorySpace', 'frequency', 'coresAmount', 'ram'],
+      },
+      {
+        text: 'Качество изображения',
+        scaleIncrement: ['inch'],
       },
     ],
   },
@@ -52,19 +64,19 @@ export const questions: QuestionInterface[] = [
     answers: [
       {
         text: 'Хорошее качество видео и заряд батареи ',
-        scaleIncrement: ['energyEfficiency'],
+        scaleIncrement: ['workTime', 'inch'],
       },
       {
         text: 'Важно то, чтобы ноутбук позволял одновременно работать с несколькими приложениями',
-        scaleIncrement: ['performance'],
+        scaleIncrement: ['coresAmount', 'frequency', 'ram'],
       },
       {
         text: 'Важно, чтобы позволял запускать текущее поколение игр. ',
-        scaleIncrement: ['gaming'],
+        scaleIncrement: ['videoMemory'],
       },
       {
         text: 'Наиболее приоритетно удобство использования, легкое строение корпуса',
-        scaleIncrement: ['ergonomics', 'mobility'],
+        scaleIncrement: ['weight'],
       },
     ],
   },
@@ -73,19 +85,15 @@ export const questions: QuestionInterface[] = [
     answers: [
       {
         text: 'Дома',
-        scaleIncrement: ['performance', 'ergonomics'],
+        scaleIncrement: ['memorySpace'],
       },
       {
         text: 'В поездках',
-        scaleIncrement: ['mobility', 'energyEfficiency'],
+        scaleIncrement: ['weight', 'workTime'],
       },
       {
-        text: 'Важно, чтобы позволял запускать текущее поколение игр. ',
-        scaleIncrement: ['gaming'],
-      },
-      {
-        text: 'Наиболее приоритетно удобство использования, легкое строение корпуса',
-        scaleIncrement: ['ergonomics', 'mobility'],
+        text: 'В офисе',
+        scaleIncrement: ['frequency', 'processor'],
       },
     ],
   },
@@ -93,16 +101,16 @@ export const questions: QuestionInterface[] = [
     title: 'Область ваших интересов скорее лежит в:',
     answers: [
       {
-        text: 'Работе по фрилансу',
-        scaleIncrement: ['mobility', 'energyEfficiency'],
+        text: 'Дизайн/разработка/моделирование/видео-монтаж',
+        scaleIncrement: ['processor', 'coresAmount', 'frequency'],
       },
       {
         text: 'Современных играх',
-        scaleIncrement: ['gaming'],
+        scaleIncrement: ['ram', 'videoMemory'],
       },
       {
         text: 'Эффективной работе с офисными приложениями',
-        scaleIncrement: ['performance', 'ergonomics'],
+        scaleIncrement: ['ram', 'frequency'],
       },
     ],
   },
@@ -110,16 +118,16 @@ export const questions: QuestionInterface[] = [
     title: 'Свободное время, вы бы скорее провели',
     answers: [
       {
-        text: ' Играя во что-либо',
-        scaleIncrement: ['gaming'],
+        text: 'Смотря фильмы',
+        scaleIncrement: ['inch'],
       },
       {
         text: 'Изучая что-то новое',
-        scaleIncrement: ['performance', 'ergonomics'],
+        scaleIncrement: ['ram', 'frequency'],
       },
       {
         text: 'Отправился бы в поездку',
-        scaleIncrement: ['mobility', 'energyEfficiency'],
+        scaleIncrement: ['workTime', 'weight'],
       },
     ],
   }

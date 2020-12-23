@@ -5,6 +5,7 @@ import {QuestionInterface} from './share/interfaces/question.interface';
 import {AnswerInterface} from './share/interfaces/answer.interface';
 import {LaptopInterface} from './share/interfaces/laptop.interface';
 import {LaptopsService} from './services/laptops/laptops.service';
+import {ScaleInterface} from "./share/interfaces/scale.interface";
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent implements OnInit {
 
   public finished: boolean;
   public sortedLaptops: LaptopInterface[];
+
+  public normalizedScale: [string, number][];
 
   constructor(private questionsService: QuestionsService, private scaleService: ScaleService, private laptopsService: LaptopsService) { }
 
@@ -38,6 +41,7 @@ export class AppComponent implements OnInit {
 
     if (index === this.questions.length - 1) {
       this.finished = true;
+      this.normalizedScale = Object.entries(this.scaleService.getNormalizedScale());
       this.sortedLaptops = this.laptopsService.getLaptopsSortedByScale();
     }
   }

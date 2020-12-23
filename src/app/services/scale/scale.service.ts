@@ -8,25 +8,28 @@ import {ScaleItemInterface} from '../../share/interfaces/scale-item.interface';
 })
 export class ScaleService {
   public userScale$: BehaviorSubject<ScaleInterface> = new BehaviorSubject({
-    energyEfficiency: 0,
-    mobility: 0,
-    performance: 0,
-    gaming: 0,
-    ergonomics: 0,
+    price: 0,
+    processor: 0,
+    coresAmount: 0,
+    frequency: 0,
+    memorySpace: 0,
+    inch: 0,
+    videoMemory: 0,
+    ram: 0,
+    weight: 0,
+    workTime: 0,
   });
 
-  public getMostValuableScale(): ScaleItemInterface {
-    let mostValuableScale: ScaleItemInterface;
-    let maxValue = -1;
+  public getNormalizedScale(): ScaleInterface {
+    const sum: number = Object.values(this.userScale$.value).reduce((acc, currentVal) => acc + currentVal, 0);
+
+    const normalizedScale: ScaleInterface = {} as any;
 
     Object.entries(this.userScale$.value).forEach(([key, value]: [keyof ScaleInterface, number]) => {
-      if (value > maxValue) {
-        maxValue = value;
-        mostValuableScale = { key, value };
-      }
+      normalizedScale[key] = value / sum;
     });
 
-    return mostValuableScale;
+    return normalizedScale;
   }
 
   public patchUserScale(key: keyof ScaleInterface, value: number): void {
